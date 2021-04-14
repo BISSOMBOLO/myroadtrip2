@@ -1,0 +1,64 @@
+1. créer les relations nécessaires en n'oubliant pas les clés primaires, étrangères ou autres contraintes d'intégrité
+CREATE TABLE vol(id INT,durée INT,destination VARCHAR(25), PRIMARY KEY(id));
+CREATE TABLE avion(id INT,nom VARCHAR(25),capacité INT,stationnement VARCHAR(25) PRIMARY KEY(id));
+CREATE TABLE pilote(id INT, nom VARCHAR(25),date DATE destination VARCHAR(20),salaire Int, prime INT, vol INT references vol ,avion INT references avion INT PRIMARY KEY(id_vol,id_avion));
+
+
+2. insérer les données telles qu'elles sont fournies dans l'énoncé
+insert into vol values(1,'Toulouse','Marseille',90)
+insert into vol values (2,'Toulouse','Lyon',90)
+insert into vol values (3,'Nantes',60)
+insert into vol values (4,'Paris','Nice',120)
+insert into vol values (5,'Nice','Toulouse',100)
+
+insert into avion values('Boeing 710','Paris',180)
+insert into avion values (Boeing 708,'Toulouse','Lyon',150)
+insert into avion values (Boeing 712,'Paris',200)
+insert into avion values (AirBus A330,'Nice',160)
+insert into avion values (AirBus A310,'Nice',120)
+
+insert into pilote values('
+
+
+
+3. indiquer la liste des vols et leur durée, triés selon leur durée croissante
+
+select * from vol order by asc;
+
+4. quels sont les vols dont la ville de départ et la ville d’arrivée contiennent la lettre `"a"`
+
+select * from vols where ville LIKE 'a%';
+
+
+5. quels sont les numéros des pilotes en service le 05/02/2021 et quelles sont les villes de départ de leurs vols ?
+
+
+
+6. quel est le nom des pilotes domiciliés à Caen dont le salaire est entre 5000 et 10000 euros?
+
+
+
+7. en Février, combien de vols ont été pilotés par François? 
+
+
+
+8. afficher le numéro et dates des vols effectués au départ de Toulouse par des pilotes domiciliés à Marseille ?
+
+
+
+9. quelles sont les villes desservies à partir de la ville d’arrivée d’un vol au départ de Nantes ?
+
+
+
+10. afficher la liste des pilotes et le montant qui leur est dû pour février 2021 (salaire plus prime)
+
+
+
+11. appliquer une augmentation de 1.5 % aux salaires des pilotes
+
+
+
+12. détruire les relations créées si elles existent
+drop table if exists vol;
+drop table if exists avion;
+drop table if exists pilote;
